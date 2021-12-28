@@ -3,7 +3,6 @@ import sys
 sys.path.insert(0,':\\Users\\47483\\Documents\\ForumScraper\\forum\\forum')
 
 print(sys.path)
-from ..items import ForumscannerItem
 import datetime
 from calendar import monthrange
 
