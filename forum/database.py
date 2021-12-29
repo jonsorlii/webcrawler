@@ -87,7 +87,7 @@ class Database():
 
 class databaseQuery():
     def __init__(self):
-        self.cnx = mysql.connector.connect(user='root', password = '12345', database = 'scrapy')
+        self.cnx = mysql.connector.connect(user='root', password = 'password', database = 'scrapy')
         self.cursor = self.cnx.cursor()
 
     def insert_ticker(self):
