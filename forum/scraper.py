@@ -68,22 +68,6 @@ class Finansavisen(scrapy.Spider):
             item['VIEWS_YESTERDAY']= reply.xpath(VIEWS_YESTERDAY).getall()
             yield item
 
-class DNOmsetning(scrapy.Spider):
-    """
-    Finme aksjene sortert etter høyest omsetning
-    """
-    name = "omsetning"
-    start_urls = ['https://investor.dn.no/#!/Utforsk/HoyOmsetning/OSE']
-
-    def parse(self, response):
-        TABLE_SELECTOR = ".table"
-        for omsetning in response.css(TABLE_SELECTOR):
-            TICKER_NAME = omsetning.xpath('tbody[@class="section-box"]/tr/td/a/text()').extract()
-            yield {
-            'ticker' : TICKER_NAME
-            }
-class Xtrainvestor(scrapy.Spider):
-    pass
 
 """configure_logging()
 runner = CrawlerRunner()
